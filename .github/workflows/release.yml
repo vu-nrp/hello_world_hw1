@@ -22,7 +22,6 @@ jobs:
       - run: cmake --build . --target package
       # Run Google Tests
       - name: 'Run GTest'
-#        run: ls /home/runner/work/hello_world_hw1/hello_world_hw1
         run: /home/runner/work/hello_world_hw1/hello_world_hw1/helloworld_test2
       # Create Release Step
       - name: 'Create Release Step'
