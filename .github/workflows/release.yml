@@ -18,8 +18,8 @@ jobs:
       - run: cmake --build . --target test
       - run: cmake --build . --target package
       # Create Release Step
-      - name: 'Create Release'
-        id: create-release
+      - name: 'Create Release Step'
+        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
@@ -29,8 +29,8 @@ jobs:
           draft: false
           prerelease: false
       # Upload Release Asset Step
-      - name: 'Upload Release Asset'
-        id: upload-release-asset
+      - name: 'Upload Release Asset Step'
+        id: upload_release_asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
