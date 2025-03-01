@@ -51,7 +51,6 @@ if(WITH_GTEST_TEST)
     
     target_link_libraries(helloworld_test2
         gtest
-#        pthread
         helloworld_lib
     )
 endif()
