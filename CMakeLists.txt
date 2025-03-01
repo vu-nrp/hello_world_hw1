@@ -28,7 +28,7 @@ target_link_libraries(helloworld_cli PRIVATE
 
 if(WITH_BOOST_TEST)
     find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-    add_executable(helloworld_test1 test_version.cpp)
+    add_executable(helloworld_test1 test1_version.cpp)
 
     set_target_properties(helloworld_test1 PROPERTIES
         CXX_STANDARD 14
@@ -69,14 +69,16 @@ if (MSVC)
     target_compile_options(helloworld_lib PRIVATE
         /W4
     )
-    if()
+    if(WITH_BOOST_TEST)
         target_compile_options(helloworld_test1 PRIVATE
             /W4
         )
     endif()
 
     if(WITH_GTEST_TEST)
-
+        target_compile_options(helloworld_test2 PRIVATE
+            /W4
+        )
     endif()
 else ()
     target_compile_options(helloworld_cli PRIVATE
@@ -92,7 +94,9 @@ else ()
     endif()
 
     if(WITH_GTEST_TEST)
-
+        target_compile_options(helloworld_test2 PRIVATE
+            -Wall -Wextra -pedantic -Werror
+        )
     endif()
 endif()
 
@@ -109,8 +113,3 @@ if(WITH_BOOST_TEST)
     enable_testing()
     add_test(helloworld_test1 helloworld_test1)
 endif()
-
-if(WITH_GTEST_TEST)
-
-endif()
-
