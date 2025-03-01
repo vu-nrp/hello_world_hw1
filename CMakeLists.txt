@@ -6,7 +6,7 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 project(helloworld VERSION ${PROJECT_VESRION})
 
 option(WITH_BOOST_TEST "Whether to build Boost test" ON)
-option(WITH_GTEST_TEST "Whether to build GTest test" OFF)
+option(WITH_GTEST_TEST "Whether to build GTest test" ON)
 
 configure_file(version.h.in version.h)
 
