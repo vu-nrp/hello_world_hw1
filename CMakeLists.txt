@@ -6,7 +6,7 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 project(helloworld VERSION ${PROJECT_VESRION})
 
 option(WITH_BOOST_TEST "Whether to build Boost test" ON)
-option(WITH_GTEST_TEST "Whether to build GTest test" OFF)
+option(WITH_GTEST_TEST "Whether to build GTest test" ON)
 
 configure_file(version.h.in version.h)
 
@@ -47,7 +47,19 @@ if(WITH_BOOST_TEST)
 endif()
 
 if(WITH_GTEST_TEST)
+    add_executable(helloworld_test2 allgtests.cpp test2_version.cpp)
+    
+    target_link_libraries(helloworld_test2
+        gtest
+        pthread
+        helloworld_lib
+    )
+    
+    target_compile_definitions(helloworld_test2 PRIVATE
+        TEST_DIR="${CMAKE_CURRENT_LIST_DIR}/test"
+    )
 
+    install(TARGETS helloworld_test2 DESTINATION bin)
 endif()
 
 if (MSVC)
