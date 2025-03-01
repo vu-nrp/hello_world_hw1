@@ -54,8 +54,8 @@ if(WITH_GTEST_TEST)
         pthread
         helloworld_lib
     )
-
-    install(TARGETS helloworld_test2 DESTINATION bin)
+#
+#    install(TARGETS helloworld_test2 DESTINATION bin)
 endif()
 
 if (MSVC)
