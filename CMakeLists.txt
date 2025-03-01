@@ -51,11 +51,9 @@ if(WITH_GTEST_TEST)
     
     target_link_libraries(helloworld_test2
         gtest
-        pthread
+#        pthread
         helloworld_lib
     )
-#
-#    install(TARGETS helloworld_test2 DESTINATION bin)
 endif()
 
 if (MSVC)
