@@ -2,6 +2,6 @@
 
 #include <gtest/gtest.h>
 
-TEST(githubActionsGtestExampleTest, versionTest) {
-  EXPECT_TRUE( version() != 0 );
+TEST(helloWorldGtest, versionTest) {
+  EXPECT_TRUE( version() == 0 );
 }
