@@ -47,7 +47,19 @@ if(WITH_BOOST_TEST)
 endif()
 
 if(WITH_GTEST_TEST)
+    add_executable(helloworld_test2 allgtests.cpp test2_version.cpp)
+    
+    target_link_libraries(helloworld_test2
+        gtest
+        pthread
+        helloworld_lib
+    )
+    
+    target_compile_definitions(helloworld_test2 PRIVATE
+        TEST_DIR="${CMAKE_CURRENT_LIST_DIR}/test"
+    )
 
+    install(TARGETS helloworld_test2 DESTINATION bin)
 endif()
 
 if (MSVC)
