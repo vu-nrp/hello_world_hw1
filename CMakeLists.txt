@@ -54,11 +54,7 @@ if(WITH_GTEST_TEST)
         pthread
         helloworld_lib
     )
-    
-#    target_compile_definitions(helloworld_test2 PRIVATE
-#        TEST_DIR="${CMAKE_CURRENT_LIST_DIR}/test"
-#    )
-#
+
     install(TARGETS helloworld_test2 DESTINATION bin)
 endif()
 
