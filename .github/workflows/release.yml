@@ -1,4 +1,4 @@
-name: 'C++ CI hello world'
+name: 'C++ CI hello world hw#2'
 
 on:
   push:
